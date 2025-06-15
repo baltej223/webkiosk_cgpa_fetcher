@@ -11,7 +11,7 @@ Options:
   -p, --password      Your WebKiosk password
   -s, --sleep         Sleep interval in seconds (default: 150)
 
-### For linux or linux
+### For linux
 ```
 git clone git@github.com:baltej223/cg_from_webkiosk.git
 cd cg_from_webkiosk
