@@ -1,6 +1,6 @@
 # CgFetcher
 A simple demon for fetching CG from Webkiosk (TIET) when CG is released and their server hangs.
-- Its is bash, so By default it will only run on Linux or macOS for windows,this repo has a bat file.
+- Bash version for Linux and macOS and .bat file for windows, is in this repo only.
 
 ## Usage: 
 ./webkiosk_cgpa_fetcher.sh --roll-number <num> --password <pass> [-s <seconds>]
@@ -18,5 +18,9 @@ Options:
 
 For running it as a demon: 
 ```bash
+# For Linux
 nohup ./webkiosk.sh --roll-number <your_roll_number> --password <your_password> &
+
+# For windows
+start /min cmd /c "C:\Path\To\Your\cgpa_checker.bat --roll-number YOUR_ROLL_NUMBER --password YOUR_PASSWORD"
 ```
