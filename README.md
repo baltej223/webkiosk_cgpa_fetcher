@@ -1,5 +1,5 @@
 # CgFetcher
-A simple demon for fetching CG from Webkiosk (TIET) when CG is released and their server hangs.
+A simple termnial app for fetching CG from Webkiosk (TIET) when CG is released and their server hangs.
 - Bash version for Linux and macOS and .bat file for windows, is in this repo only.
 
 ## Usage: 
