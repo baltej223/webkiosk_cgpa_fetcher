@@ -1,41 +1,78 @@
 # CgFetcher
-A simple termnial app for fetching CG from Webkiosk (TIET) when CG is released and their server hangs.
-- Bash version for Linux and macOS and .bat file for windows, is in this repo only.
-- It will fetch your CGPA after some specified time, and it will create a html file which will have your CGPA which you can check for checking CGPA release. 
 
-## Usage: 
-./webkiosk_cgpa_fetcher.sh --roll-number <num> --password <pass> [-s <seconds>]
+A lightweight terminal-based utility to automatically fetch your CGPA from Webkiosk (TIET) — especially useful when the server is overloaded during CGPA releases.
 
-Options:
-  -r, --roll-number   Your Enrollment Number (e.g., 1024123456)
-  -p, --password      Your WebKiosk password
-  -s, --sleep         Sleep interval in seconds (default: 150)
+Supports:
 
-### For linux
+* **Linux/macOS** via a Bash script
+* **Windows** via a `.bat` file
+
+---
+
+## 🔧 Features
+
+* Periodically checks Webkiosk for your CGPA.
+* Automatically saves the result to an HTML file for quick access.
+* Customizable fetch interval.
+* Works in the background (daemon mode).
+
+---
+
+## 🚀 Usage
+
+```bash
+./webkiosk_cgpa_fetcher.sh --roll-number <ROLL> --password <PASSWORD> [-s <SECONDS>]
 ```
+
+### Options
+
+| Flag                  | Description                                       |
+| --------------------- | ------------------------------------------------- |
+| `-r`, `--roll-number` | Your Enrollment Number (e.g., `1024123456`)       |
+| `-p`, `--password`    | Your Webkiosk password                            |
+| `-s`, `--sleep`       | Interval in seconds between checks (default: 150) |
+
+---
+
+## Installation
+
+### Linux/macOS
+```bash
 git clone git@github.com:baltej223/cg_from_webkiosk.git
 cd cg_from_webkiosk
-chmod a+x ./webkiosk_cgpa_fetcher.sh
-./webkiosk_cgpa_fetcher.sh --roll-number <num> --password <pass> [-s <seconds>]
+chmod +x ./webkiosk_cgpa_fetcher.sh
+./webkiosk_cgpa_fetcher.sh --roll-number <ROLL> --password <PASSWORD> [-s <SECONDS>]
 ```
-### For Windows
-```
+
+### Windows
+```bat
 git clone https://github.com/baltej223/cg_from_webkiosk.git
 cd cg_from_webkiosk
-./webkiosk_cgpa_fetch.bat --roll-number <num> --password <pass> [-s <seconds>]
+webkiosk_cgpa_fetch.bat --roll-number <ROLL> --password <PASSWORD> [-s <SECONDS>]
 ```
+---
 
-## Example: 
-```
-./webkiosk_cgpa_fetcher.sh --roll-number 1024123456 --password pass -s 100
-```
-- It will fetch you cgpa after every 100 seconds, and will save it in a HTML file.
-
-For running it as a demon: 
+## Example
 ```bash
-# For Linux
-nohup ./webkiosk.sh --roll-number <your_roll_number> --password <your_password> &
-
-# For windows
-start /min cmd /c "C:\Path\To\Your\cgpa_checker.bat --roll-number YOUR_ROLL_NUMBER --password YOUR_PASSWORD"
+./webkiosk_cgpa_fetcher.sh --roll-number 1024123456 --password mypass123 -s 100
 ```
+This will check for your CGPA every 100 seconds and update the output HTML accordingly.
+---
+
+## Run in Background (Daemon Mode)
+
+### Linux/macOS
+
+```bash
+nohup ./webkiosk_cgpa_fetcher.sh --roll-number <ROLL> --password <PASSWORD> &
+```
+
+### Windows
+
+```bat
+start /min cmd /c "C:\Path\To\cg_from_webkiosk\webkiosk_cgpa_fetch.bat --roll-number <ROLL> --password <PASSWORD>"
+```
+
+---
+> Note: Ensure you have the necessary permissions and dependencies (like `curl`) installed.
+---
