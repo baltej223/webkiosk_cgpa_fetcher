@@ -9,7 +9,7 @@ Supports:
 
 ---
 
-## 🔧 Features
+## Features
 
 * Periodically checks Webkiosk for your CGPA.
 * Automatically saves the result to an HTML file for quick access.
@@ -18,7 +18,7 @@ Supports:
 
 ---
 
-## 🚀 Usage
+## Usage
 
 ```bash
 ./webkiosk_cgpa_fetcher.sh --roll-number <ROLL> --password <PASSWORD> [-s <SECONDS>]
