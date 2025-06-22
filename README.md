@@ -72,7 +72,9 @@ nohup ./webkiosk_cgpa_fetcher.sh --roll-number <ROLL> --password <PASSWORD> &
 ```bat
 start /min cmd /c "C:\Path\To\cg_from_webkiosk\webkiosk_cgpa_fetch.bat --roll-number <ROLL> --password <PASSWORD>"
 ```
-
 ---
 > Note: Ensure you have the necessary permissions and dependencies (like `curl`) installed.
 ---
+
+## Running On Esp8266
+Download the ino file and flash it to Esp8266
